@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,td{margin:0;padding:0;}/*去除所有元素外边距*/
+body{font:12px  "宋体"; word-wrap:break-word;}
+a,u,s,del{color:#666;text-decoration:none} /*去除元素样式*/
+fieldset ,a img,.bor0 {border:0;}/*去除边框*/
+i,em,b,th{font-style:normal;font-weight:100;}
+li{list-style:none;}/*去除li的点*/
+img{vertical-align:middle;}
+table{border-collapse:collapse;}/*合并边框*/
+input,textarea{outline:none;}/*去除google表单点击虚框*/
+textarea{resize:none;}/*禁止拖动*/
+
+
+.ind2{text-indent:2em;}
+/*让图片在父元素里居中*/
+.valign{text-align:center;}
+.valign img{vertical-align:middle;}
+.valign:after{content:"";display:inline-block;vertical-align:middle;height:100%;}
+
+/* 单行文本自动出现省略号 */
+.over{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+/* 解决高度塌陷和margin-top向上传递 */
+.clear{zoom:1;}/* 解决IE的高度塌陷问题 */
+.clear:before{content:"";display:table;}/*解决传递*/
+
+.clear:after{content:"";clear:both;display:block;}/*解决塌陷*/
