@@ -5,7 +5,10 @@
   margin: 0 auto; }
 
 body {
-  font-family: '微软雅黑'; }
+  font-family: '微软雅黑';
+  font-size: 14px;
+  color: #333;
+  min-width: 1080px; }
 
 i.bgicon {
   background-image: url(../images/icons.png);
@@ -127,7 +130,6 @@ i.bgicon {
   float: left;
   margin-left: 10px;
   margin-right: 70px;
-  width: 56px;
   height: 51px;
   position: relative; }
 
@@ -390,7 +392,7 @@ i.bgicon {
   line-height: 23px; }
   #footer .margin .foot-l {
     float: left;
-    width: 274px; }
+    width: 280px; }
     #footer .margin .foot-l img {
       display: inline-block;
       width: 123px;

@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 .margin{width:1080px;margin:0 auto;}
-body{font-family: '微软雅黑';}
+body{font-family: '微软雅黑';font-size: 14px;color: #333;min-width: 1080px;}
 i.bgicon{background-image: url(../images/icons.png);background-repeat: no-repeat;}
 .fl{float: left;}
 .fr{float: right;}
@@ -60,7 +60,7 @@ i.bgicon{background-image: url(../images/icons.png);background-repeat: no-repeat
 #head{padding-top: 20px;margin-bottom: 5px;background-color: #fff;z-index: 20;}
 
 #head h1{float: left; width: 123px;height: 51px;background: url(../images/logo.png) no-repeat; background-size: 100%;} 
-#head .nav_part_box{float: left;margin-left: 10px;margin-right: 70px;width: 56px;height: 51px;position:relative;}
+#head .nav_part_box{float: left;margin-left: 10px;margin-right: 70px;height: 51px;position:relative;}
 #head .nav_part_box .nav_part{margin-top: 12px; border: 1px solid #efefef;padding: 0 5px;display: none;}
 #head .nav_part_box .nav_part span{font: 14px/24px "微软雅黑";color: #333;}
 #head .nav_part_box .nav_part i{}
@@ -165,7 +165,7 @@ i.bgicon{background-image: url(../images/icons.png);background-repeat: no-repeat
 //页脚
 #footer{margin-top: 90px;padding: 45px 0;height: 45px;border-top: 1px solid #e7e7e7;color:#666;line-height:23px;
 	.margin{
-		.foot-l{float: left;width: 274px;
+		.foot-l{float: left;width: 280px;
 			img{display:inline-block; width: 123px;height: 45px;margin-right: 25px;}
 		}
 		.foot-r{float: right;
