@@ -8,7 +8,6 @@ require.config({
 		"headf":"headf",//页头页尾
 		"public":"public",
 		"goods": "goods",
-		"product":"product",
 	},
 	//设置，模块之间的依赖关系
 	shim: {
@@ -18,6 +17,7 @@ require.config({
 })
 
 //调用函数
-require(["index"], function(index){
-	index.main();
+require(["headf", "goods"], function(headf, goods){
+	headf.headf();
+	goods.goods();
 })

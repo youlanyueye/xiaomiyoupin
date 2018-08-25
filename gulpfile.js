@@ -51,7 +51,7 @@ gulp.task('build',['copy-html','images','data', 'scss', 'js'],function(){
 
 //监听
 gulp.task('watch', function(){
-	gulp.watch('redact/index.html', ['copy-html']);
+	gulp.watch('redact/*.html', ['copy-html']);
 	gulp.watch('redact/images/**/*', ['images']);
 	gulp.watch('redact/data/*.json', ['data']);
 	gulp.watch("redact/scss/*.scss", ["scss"]);

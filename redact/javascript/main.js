@@ -1,4 +1,3 @@
-
 /*
 	配置模块
  */ 
@@ -6,13 +5,15 @@ require.config({
 	paths: {
 		"jquery": "jquery-1.11.3",
 		"jquery-cookie": "jquery.cookie",
-		"index": "index",
+		"headf":"headf",//页头页尾
+		"public":"public",
+		"goods": "goods",
+		"product":"product",
 	},
 	//设置，模块之间的依赖关系
 	shim: {
 		//保证，先加载JQuery，再加载
 		"jquery-cookie": ["jquery"]
-
 	}
 })
 

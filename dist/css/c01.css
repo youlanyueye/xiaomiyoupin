@@ -1,0 +1,60 @@
+/* CSS Document */
+#footer {
+  margin-top: 0px; }
+
+#main {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  border-top: 1px solid #e7e7e7;
+  min-height: 285px; }
+  #main .margin .main-h {
+    margin-bottom: 67px; }
+    #main .margin .main-h .banner {
+      margin-right: 46px;
+      width: 465px;
+      height: 433px;
+      float: left; }
+      #main .margin .main-h .banner .main-img {
+        width: 366px;
+        height: 431px;
+        background-color: #f4f4f4;
+        border: 1px solid #ececec; }
+        #main .margin .main-h .banner .main-img img {
+          width: 100%;
+          height: 100%;
+          display: block; }
+      #main .margin .main-h .banner .thumb {
+        width: 85px;
+        height: 100%;
+        position: relative;
+        overflow: hidden; }
+        #main .margin .main-h .banner .thumb .thumb-container {
+          position: absolute; }
+          #main .margin .main-h .banner .thumb .thumb-container .thumb-pic {
+            width: 83px;
+            height: 98px;
+            margin-bottom: 11px;
+            border: 1px solid #ececec;
+            background-color: #f4f4f4; }
+            #main .margin .main-h .banner .thumb .thumb-container .thumb-pic img {
+              width: 100%;
+              height: 100%;
+              display: block; }
+          #main .margin .main-h .banner .thumb .thumb-container .thumb-pic.active {
+            border-color: #845f3f; }
+        #main .margin .main-h .banner .thumb .arrow-up {
+          position: absolute;
+          top: 0; }
+          #main .margin .main-h .banner .thumb .arrow-up i {
+            display: block;
+            width: 85px;
+            height: 16px;
+            background-position: 0 -275px; }
+        #main .margin .main-h .banner .thumb .arrow-down {
+          position: absolute;
+          bottom: 0; }
+          #main .margin .main-h .banner .thumb .arrow-down i {
+            display: block;
+            width: 85px;
+            height: 16px;
+            background-position: 0 -175px; }

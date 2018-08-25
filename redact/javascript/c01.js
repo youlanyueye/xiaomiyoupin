@@ -18,6 +18,7 @@ require.config({
 })
 
 //调用函数
-require(["index"], function(index){
-	index.main();
+require(["headf", "product"], function(headf, product){
+	headf.headf();
+	product.product();
 })

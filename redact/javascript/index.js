@@ -1,18 +1,11 @@
-define(["jquery", "jquery-cookie"], function($){
+define(["public"], function(public){
 	var main = function(){
 		$(function(){
+
+			public.public();
 			console.log("成功");
-			//用户名称部分移入移出
-			$('.log_later').mouseenter(
-				function(){
-					$('.userinfo').css('display', 'block')
-				}
-			)
-			$('.log_later').mouseleave(
-				function(){
-					$('.userinfo').css('display', 'none')
-				}
-			)
+
+
 
 			//加载导航
 			$.ajax({
@@ -84,29 +77,7 @@ define(["jquery", "jquery-cookie"], function($){
 			})
 
 			
-			//页面滚动时head动作
-			$(window).on("scroll", function(){
-				var dist = $(window).scrollTop();
-				var oHead = $('#head')[0];
-				var oNav_part = $('.nav_part')[0];
-				if(dist > 482){
-					oHead.style.position = 'fixed';
-					oHead.style.top = '0px';
-					oHead.style.left = '0px';
-					oHead.style.right = '0px';
-					oHead.style.marginBottom = '0px';
-					oHead.style.paddingTop = '0px';
-					oHead.style.borderBottom = '1px solid #eee';
-					oHead.style.opacity = '1';
-					oNav_part.style.display = 'block';
-				}else{
-					oHead.style.position = 'static';
-					oHead.style.marginBottom = '5px';
-					oHead.style.paddingTop = '20px';
-					oHead.style.borderBottom = 'none';
-					oNav_part.style.display = 'none';
-				}
-			})
+
 
 			/*分类下的导航栏*/
 			$('.nav_part_box').on('mouseenter', function(){
@@ -193,7 +164,7 @@ define(["jquery", "jquery-cookie"], function($){
 			});
 
 			//鼠标移入轮播图时停止定时器
-/*			oUl.on("mouseenter", function(){
+		  /*oUl.on("mouseenter", function(){
 				clearInterval(timer);
 			})
 			oUl.on("mouseleave", function(){
@@ -247,14 +218,6 @@ define(["jquery", "jquery-cookie"], function($){
 				}
 			});
 
-			$('.rocket').click(function(){
-				$("html,body").animate({scrollTop:0},1000);
-			});
-
-
-
-
-
 
 			//加载产品分类数据
 			$.ajax({
@@ -269,9 +232,9 @@ define(["jquery", "jquery-cookie"], function($){
 								<div class="randomBg-top clear">
 									<div class="spacial-guide" style="background-color: ${arr[i].background_color};">
 										<h2 class="top-tit">${arr[i].classify_name}</h2>
-										<span class="pro-more" data-target="_blank" data-src = "http://localhost:8888/classify_${arr[i].classify_id}.html">更多 &gt;</span>
+										<span class="pro-more tag-a" data-target="_blank" data-src = "http://localhost:8888/${arr[i].classify_id}.html">更多 &gt;</span>
 									</div>
-									<div class="randomBg-img tag-a" data-src="?gid=${arr[i].banner_id}">
+									<div class="randomBg-img tag-a" data-src="http://localhost:8888/${arr[i].banner_id}.html">
 										<img class="" src="${arr[i].banner_src}">
 									</div>
 								</div>
@@ -281,7 +244,7 @@ define(["jquery", "jquery-cookie"], function($){
 						</div>`).insertBefore($('#fixedBar'));
 						var pro = arr[i].product;
 						for(var j = 0; j < pro.length; j++){
-							$(`<div class="pro-item-box"><div class="pro-item tag-a" data-src="?gid=${pro[j].pro_id}">
+							$(`<div class="pro-item-box"><div class="pro-item tag-a" data-src="http://localhost:8888/${pro[j].pro_id}.html">
 									<div class="pro-img valign">
 										<img src="${pro[j].pro_src}">
 									</div>
@@ -296,36 +259,18 @@ define(["jquery", "jquery-cookie"], function($){
 							if(pro[j].sale){
 								$(`<span class="sale-tag">直降</span>`).appendTo($('.product-list').eq(i).find('.pro-price').eq(j));
 							}
-						}		
-											
+						}							
 					}
-					
-
-				
-			
 			})
 			.fail(function(msg) {
 				alert(msg);
 			})
 			.always(function() {
-				
+				$('.tag-a').click(function(){
+					var phtml = $(this).attr('data-src');
+					open(phtml);
+				});
 			});
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
 
 		})
 	}
