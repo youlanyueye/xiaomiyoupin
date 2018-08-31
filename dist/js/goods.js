@@ -5,7 +5,7 @@ define(["headf", "public"], function(headf, public){
 
 		//加载产品分类数据
 		$.ajax({
-			url: '../data/goods.json'
+			url: 'data/goods.json'
 		})
 		.done(function(arr) {
 			//alert(arr[0].typeGoods);
@@ -17,7 +17,7 @@ define(["headf", "public"], function(headf, public){
 					var pro = arr[i].product;
 					for(var j = 0; j < pro.length; j++){
 						$(`<div class="pro-item-box">
-								<div class="pro-item tag-a" data-src="http://localhost:8888/${pro[j].pro_id}.html">
+								<div class="pro-item tag-a" data-src="product.html?gid=${pro[j].pro_id}">
 									<div class="pro-img valign">
 										<img src="${pro[j].pro_src}">
 									</div>

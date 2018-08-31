@@ -18,6 +18,7 @@ require.config({
 })
 
 //调用函数
-require(["index"], function(index){
+require(["index", "headf"], function(index, headf){
+	headf.headf();
 	index.main();
 })

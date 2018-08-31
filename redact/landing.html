@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆</title>
+	<link rel="stylesheet" href="css/public.min.css">
+	<link rel="stylesheet" href="css/landing.min.css">
+	<script src = "js/require.js" defer async="true" data-main = "js/landing"></script>
+
+</head>
+
+<body class="zh_CN">
+
+	<div class="layout_panel">
+		<div class="layout" id="layout">
+			<!--表单输入登录-->
+			<div class="mainbox" id="login-main">
+				<div class="lgnheader">
+					<em id="custom_display_1" class="milogo">
+						<img src="images/logo-s.png" alt="" class="logo">
+					</em>
+					<h4 class="header_tit_txt" id="login-title">
+						小米帐号登录
+					</h4>
+				</div>
+
+				<div class="tabs-con" data-con="pwd">
+					<div class="login_area">
+						<div id="login-main-form">
+							<!-- 输入框 -->
+							<div class="lgn_inputbg">
+								<label id="region-code" class="labelbox login_user" for="">
+									<input class="item_account" autocomplete="off" name="user" id="username"
+									placeholder="邮箱/手机号码/小米ID" type="text">
+								</label>
+
+								<label class="labelbox pwd_panel">
+									<input class="item_account" placeholder="密码" autocomplete="off" id="pwd"
+									name="password" type="password">
+								</label>
+							</div>
+							<div class="lgncode clear">
+								<label class="labelbox code_label">
+									<input id="captcha-code" class="code item_account" name="captCode" placeholder="图片验证码"
+									autocomplete="off" type="text">
+								</label>
+								<div class="chkcode_img"></div>
+							</div>
+							
+							<!-- 错误信息 -->
+							<div class="err_tip">
+								<em class="icon_error"></em>
+								<span class="error-con">提示信息</span>
+							</div>
+
+							<div class="btns_bg">
+								<input class="btnadpt" id="login-button" value="登录" type="submit">
+							</div>
+							<div class="other_panel clear">
+								<span id="custom_display_256" class="sms_link">
+									<a href="#" class="btnadpt btn_gray" id="ChangeLoginType">手机短信登录/注册</a>
+								</span>
+								<div class="reverse">
+									<a class="outer-link" href="login.html">立即注册</a>
+									<span>|</span>
+									<a class="outer-link" href="#">忘记密码？</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="custom_display_4" class="footer">
+			<ul class="lang-select-list">
+				<li>
+					<a href="#" data-lang="zh_CN" class="lang-select-li current">简体</a>|
+				</li>
+				<li>
+					<a href="#" data-lang="zh_TW" class="lang-select-li">繁体</a>|
+				</li>
+				<li>
+					<a href="#" data-lang="en" class="lang-select-li">English</a>|
+				</li>
+				<li>
+					<a href="#" target="_blank">常见问题</a>|
+				</li>
+				<li>
+					<a id="msg-privacy" href="#" target="_blank">隐私政策</a>
+				</li>
+			</ul>
+		<p class="nf-intro">
+			小米公司版权所有-京ICP备10046444-
+			<a class="beian-record-link" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134">
+				<span>
+					<img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png">
+				</span>
+				京公网安备11010802020134号
+			</a>
+			-京ICP证110507号
+		</p>
+	</div>
+</body>
+
+
+
+</html>

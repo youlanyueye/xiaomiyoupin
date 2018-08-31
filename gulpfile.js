@@ -7,6 +7,13 @@ gulp.task('copy-html',function(){
 	.pipe(connect.reload());
 })
 
+//整理php
+gulp.task('copy-php',function(){
+	return gulp.src('redact/*.php')
+	.pipe(gulp.dest('dist'))
+	.pipe(connect.reload());
+})
+
 //整理images
 gulp.task('images',function(){
 	return gulp.src('redact/images/**/*')
@@ -45,7 +52,7 @@ gulp.task('js', function(){
 })
 
 //同时整理html images data
-gulp.task('build',['copy-html','images','data', 'scss', 'js'],function(){
+gulp.task('build',['copy-html','images','data', 'scss', 'js','copy-php'],function(){
 	console.log('成功');
 })
 
@@ -56,6 +63,7 @@ gulp.task('watch', function(){
 	gulp.watch('redact/data/*.json', ['data']);
 	gulp.watch("redact/scss/*.scss", ["scss"]);
 	gulp.watch("redact/javascript/*.js", ["js"]);
+	gulp.watch("redact/*.php", ["copy-php"]);
 })
 
 

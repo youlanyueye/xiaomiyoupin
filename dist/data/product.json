@@ -1,0 +1,38 @@
+[
+  {
+    "pro_id": "c01",
+    "sub_name": "莱克吉米手持无线吸尘器",
+    "pro_intro": "莱克吉米手持无线吸尘器",
+    "pro_src": "images/product/c01-m1.png",
+    "pro_src_s": "images/product/c01.png",
+    "pro_price": "999",
+    "sale": true
+  },
+  {
+    "pro_id": "c02",
+    "sub_name": "石头扫地机器人",
+    "pro_intro": "米家扫地机器人团队出品！ 传感器升级！长续航，智能规划，扫拖一体，清扫性能更强！",
+    "pro_src": "images/product/c02-m1.png",
+    "pro_src_s": "images/product/c02.png",
+    "pro_price": "2399",
+    "sale": false
+  },
+  {
+    "pro_id": "c03",
+    "sub_name": "小吉迷你复古冰箱Light系列",
+    "pro_intro": "小吉迷你复古冰箱Light系列 橄榄绿（预售，8.13发货）",
+    "pro_src": "images/product/c03-m1.png",
+    "pro_src_s": "images/product/c03.png",
+    "pro_price": "1099",
+    "sale": false
+  },
+  {
+    "pro_id": "c04",
+    "sub_name": "猫盘 共享智能硬盘 2TB",
+    "pro_intro": "猫盘 共享智能硬盘 2TB",
+    "pro_src": "images/product/c04-m1.png",
+    "pro_src_s": "images/product/c04.png",
+    "pro_price": "789",
+    "sale": false
+  }
+]

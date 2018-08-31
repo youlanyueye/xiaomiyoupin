@@ -1,0 +1,54 @@
+#phone_step1{
+	.tit_normal{padding-bottom: 5px;color: #333;font-size: 14px;font-weight: 100;}
+	.statebox{
+		.state{height: 40px;padding-left: 14px;line-height: 40px;border:1px solid #e8e8e8;color:#555;}
+	}
+	.region_tip_text{margin-bottom: 15px;line-height: 20px;color: #666;}
+	.areabox{padding-bottom: 15px;
+		.area{float: left;width: 54px;text-align:center;padding: 0 9px;height: 40px;line-height: 40px;border:1px solid #e8e8e8;color:#555;}
+		#phone_num{float: left;margin-left: -1px;height: 20px;line-height: 20px;border:1px solid #e8e8e8;width: 236px;padding: 10px;color:#333;}
+	}	
+} 
+
+	.button-m{background-color: #ff6700;margin-top: 15px;border:1px solid rgba(186,186,186,0.3);color: #fff;height: 42px;width: 330px;margin:15px auto 0;line-height: 42px;text-align: center;font-size: 14px;display: block;cursor: pointer;}
+	.button-m:hover{background-color: #ff936a;}
+
+.checkbox{margin-top: 40px;padding-bottom: 30px;
+	.checked{display: block; width: 410px; padding: 10px 0;color:#9d9d9d;text-align: center;margin: 0 auto;
+		.icon_select{width: 20px;height: 20px;background: url(../images/icons-i.png) no-repeat;display: inline-block;vertical-align: middle;}
+		.inspect_link{color: #333;font-weight: bold;}
+	}
+}
+
+
+#phone_step2{
+	.lgncode{padding-bottom: 14px;
+		.code_label{width: 220px;margin-bottom: 0;float: left;
+			.code{width: 190px;}
+		}
+		.chkcode_img{float: right;height:38px; width: 90px; padding: 5px 5px;background: #e6e6e6;font-size: 20px;text-align: center;line-height: 38px;}
+	}
+
+	.err_tip{margin-bottom: 5px;line-height: 20px;color: #f56700;display: none;
+		em.icon_error{display: inline-block;width: 14px;height: 14px;margin:-1px 5px 0 0;background: url(../images/icons-s.png) no-repeat 0 -69px;}
+		.error-con{}
+	}
+
+	.return{background: #fff;border-color: #ddd;color:#7c7c7c;}
+	.return:hover{color:#333;}
+
+}
+
+#phone_step3{
+	h4{margin-bottom: 5px;color: #555;
+		.num{color:#ff6700;}
+	}
+	.passbox{height: 20px;line-height: 20px;border:1px solid #e8e8e8;padding: 10px;color:#333;display: block;width: 310px;margin-bottom: 10px;}
+	.rule{color: #555;}
+}
+
+#phone_step4{
+	p{margin: 10px 0 60px;text-align: center;height: 20px;line-height: 20px;color: #555;font-size: 16px;
+		#id{color:#ff6700;}
+	}
+}

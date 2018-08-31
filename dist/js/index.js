@@ -1,96 +1,8 @@
-define(["public"], function(public){
+define(["headf","public"], function(headf, public){
 	var main = function(){
 		$(function(){
 
 			public.public();
-			console.log("成功");
-
-
-
-			//加载导航
-			$.ajax({
-				url: '../data/nav.json'
-			})
-			.done(function(arr) {
-				for(var i = 0; i < arr.length; i++){
-					$(`<li>
-						<a href="${arr[i][0].grouping_http}" target = "_blank" class="${arr[i][0].grouping_id}">${arr[i][0].grouping_name}</a>
-						</li>`
-					).appendTo($('#nav ul'));
-					if(arr[i][1]){
-						$(`<span>/</span>
-							<a href="${arr[i][1].grouping_http}" target = "_blank" class="${arr[i][1].grouping_id}">${arr[i][1].grouping_name}</a>`
-					).appendTo($('#nav ul li').eq(i));
-					}
-				}
-
-				$('#nav ul li').each(function(index, el){
-						$(`<div class="nav_detail detail_${index}"></div>`).appendTo(el);
-
-						for(var i = 0; i < arr[index].length; i++){
-
-							$(`<div class="grouping">
-									<p class="title">
-										${arr[index][i].grouping_name}
-									</p>
-									<ul class="clear">
-										
-									</ul>
-								</div>`).appendTo($('.detail_' + index));
-							var subclass = arr[index][i].subclass;
-							//alert(index);
-							for(var j = 0; j < subclass.length; j++){
-								
-								$(`<div class="subclass" data-src = "${subclass[j].sub_http}">
-										<img src="${subclass[j].sub_src}" alt="${subclass[j].sub_name}">
-										<span>
-											${subclass[j].sub_name}
-										</span>
-									</div>`).appendTo($('#nav ul li').eq(index).find('.nav_detail .grouping ul').eq(i));
-							}
-						}
-				})
-			
-			})
-			.fail(function(msg) {
-				alert(msg);
-			})
-			.always(function() {
-				$('#nav').clone(true).attr('id', 'nav2').appendTo($('.nav_part_box'));
-			});
-			
-
-			$("#nav ul").on("mouseenter", "li", function(){
-				$(this).css('background', '#684b34');
-				var index = $(this).index();
-				$(this).find('.nav_detail').css('display', 'block');
-			})
-			$("#nav ul").on("mouseleave", "li", function(){
-				$(this).css('background', '#845f3f');
-				var index = $(this).index();
-				$(this).find('.nav_detail').css('display', 'none');
-			})
-			//子导航点击事件
-			$("#nav ul").on("click", ".subclass", function(){
-				var data_src = $(this).attr('data-src');
-				open(data_src);
-			})
-
-			
-
-
-			/*分类下的导航栏*/
-			$('.nav_part_box').on('mouseenter', function(){
-				$('.nav_part_box #nav2').css('display', 'block');
-			})
-			$('.nav_part_box').on('mouseleave', function(){
-				$('.nav_part_box #nav2').css('display', 'none');
-			})
-			
-
-
-
-
 
 			//轮播图
 			var oBtns = $("#scrollbar").find("ol").find("span");
@@ -119,7 +31,7 @@ define(["public"], function(public){
 					oBtns.eq(iNow).attr("class", "active");
 				}
 				
-				oUl.animate({left: iNow * -858}, function(){
+				oUl.stop().animate({left: iNow * -858}, function(){
 					if(iNow == oBtns.size()){
 						iNow = 0;
 						oUl.css("left", "0px");
@@ -182,7 +94,7 @@ define(["public"], function(public){
 
 			//左右切换函数
 			function hot_tab(node, n){
-				node.animate({left: n * -271}, function(){
+				node.stop().animate({left: n * -271}, function(){
 				});
 			}
 			
@@ -221,7 +133,7 @@ define(["public"], function(public){
 
 			//加载产品分类数据
 			$.ajax({
-				url: '../data/pro.json'
+				url: 'data/pro.json'
 			})
 			.done(function(arr) {
 				//alert(arr);
@@ -263,7 +175,7 @@ define(["public"], function(public){
 					}
 			})
 			.fail(function(msg) {
-				alert(msg);
+				console.log(msg);
 			})
 			.always(function() {
 				$('.tag-a').click(function(){

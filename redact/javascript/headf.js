@@ -10,7 +10,7 @@ define(["jquery", "jquery-cookie"], function($){
 					<div class="log_later">
 						<a href="#">
 							<i id='buddha'></i>
-							<u>用户名称</u>
+							<u id='username'>用户名称</u>
 							<i class="arrows"></i>
 						</a>
 						<div class="userinfo">
@@ -19,14 +19,14 @@ define(["jquery", "jquery-cookie"], function($){
 								<li><a href="#">我的资产</a></li>
 								<li><a href="#">我的收藏</a></li>
 								<li><a href="#">地址管理</a></li>
-								<li><a href="#">退出登陆</a></li>
+								<li id = 'exit'><a href="#">退出登陆</a></li>
 							</ul>
 						</div>
 					</div>
 					
 					<div class="log">
-						<a class='float' href="#">登陆</a>
-						<a class='float' href="#">注册</a>
+						<a class='float' href="landing.html">登陆</a>
+						<a class='float' href="login.html">注册</a>
 					</div>
 					<span>|</span>
 					<a class='float' href="#">帮助中心</a>
@@ -42,8 +42,14 @@ define(["jquery", "jquery-cookie"], function($){
 				<h1 class="logo"></h1>
 				<div class="nav_part_box">
 					<div class="nav_part">
-						<span>分类</span>
+						<span class='box'>分类</span>
 						<i class="arrows"></i>
+						<div id="nav2">
+							<ul>
+								<!-- nav数据导入 -->
+								<!-- 子导航动态加载 -->
+							</ul>
+						</div>
 
 					</div>	
 				</div>
@@ -54,8 +60,14 @@ define(["jquery", "jquery-cookie"], function($){
 					<li><a href="#" target="_blank">星品驾到</a></li>
 					<li><a href="#" target="_blank">世界风物</a></li>
 				</ul>
-				<div class="shopping_cart">
-					<a href="#"></a>
+				<div class="shopping_cart" id='cart'>
+					<a href="cart.html"></a>
+					<span class="cart-news">0</span>
+					<div class="shop_lish">
+						<ul>
+							
+						</ul>
+					</div>
 				</div>
 				<div class="search">
 					<a href="#"></a>

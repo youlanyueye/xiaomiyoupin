@@ -2,6 +2,98 @@ define(["headf", "public"], function(headf, public){
 	var product = function(){
 		public.public();
 
+		//获取链接？后gid的值
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = decodeURI(window.location.search.substr(1)).match(reg);
+		    if (r != null)return unescape(r[2]);
+		    return null;
+		}
+
+		var gid = GetQueryString("gid");
+		//alert(gid);
+
+		//获取商品数据
+		$.ajax({
+			url: 'data/product.json',
+		})
+		.done(function(arr) {
+			console.log(arr);
+			for (var i = 0; i < arr.length; i++) {
+				if(arr[i].pro_id == gid){
+					var index = i;
+					break;
+				}
+			}
+			//alert(index);
+			$('.main-img img').attr('src', arr[i].pro_src);
+			$('.max-img img').attr('src', arr[i].pro_src);
+			$('.thumb-pic1 img').attr('src', arr[i].pro_src);
+			$('.good-name').html(arr[i].sub_name);
+			$('.summary').html(arr[i].pro_intro);
+			$('.price-line .value').html(arr[i].pro_price);	
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+		// 购物车数字
+		function sc_car(){
+			var str = $.cookie("goods");
+			if(str){
+				var arr = eval(str);
+				var sum = 0;
+				for(var i = 0; i < arr.length; i++){
+					sum += arr[i].num;
+				}
+
+				$(".cart-news").html(sum);
+				$(".cart-news").css('display', 'block');
+			}else{
+				$(".cart-news").css('display', 'none');
+			}
+		}
+
+		//点击加入购物车
+		$("#addshop").click( function(){
+			//json格式的字符串去存 goods  [{id:1, num:3},{id:7, num2}];
+
+			//1、判断是否第一次添加cookie
+			var first = $.cookie("goods") == null ? true : false;
+			if(first){
+				$.cookie('goods', `[{id:"${gid}",num:${$('#shop_num').val()}}]`, {expires: 7});
+			}else{
+				//2、判断之前是否添加过该商品
+				var goods = $.cookie('goods');
+				var goodsarr = eval(goods);
+				var same = false; //假设没有相同的数据
+				for(var i = 0; i < goodsarr.length; i++){
+					if(goodsarr[i].id == gid){
+						//之前添加过
+						goodsarr[i].num = Number(goodsarr[i].num) + Number($('#shop_num').val());
+						var cookieStr = JSON.stringify(goodsarr);
+						$.cookie('goods', cookieStr, {expires: 7});
+						same = true;
+						break;
+					}
+				}
+				if(!same){
+					//之前没添加过
+					var obj = {id: gid, num: Number($('#shop_num').val())};
+					goodsarr.push(obj);
+					var cookieStr = JSON.stringify(goodsarr);
+					$.cookie('goods', cookieStr, {expires: 7});
+				}
+			}
+			sc_car();
+			//alert($.cookie('goods'));
+		})
+
+
+		//产品图片切换
 		function cli_src(node){
 			//边框变色
 			node.addClass('active').siblings().removeClass('active');
@@ -13,7 +105,8 @@ define(["headf", "public"], function(headf, public){
 		var ind = null;
 		function active_ind(){
 			$('.thumb-pic').each(function(index, el){
-				if($(el).attr('class') == 'thumb-pic active'){
+				//判断是否含有class active
+				if($(el).hasClass("active")){
 					ind = index;
 				}
 			})
@@ -28,14 +121,15 @@ define(["headf", "public"], function(headf, public){
 			//alert(ptop);
 			if(ptop == 0){
 				if(pindex !== 0){
-					$('.thumb-container').animate({top: ((pindex - 1) * -111)});
+					$('.thumb-container').stop().animate({top: ((pindex - 1) * -111)});
 				}
 			}
 			if(ptop == 333){
 				if(pindex !== $('.thumb-pic').length - 1)
-					$('.thumb-container').animate({top: ((pindex - 2) * -111)});
+					$('.thumb-container').stop().animate({top: ((pindex - 2) * -111)});
 			}
 		});
+
 		$('.arrow-up').click(function(event) {
 			var thumb_top = $('.thumb').offset().top;
 			var container_top = $('.thumb-container').offset().top;
@@ -48,7 +142,7 @@ define(["headf", "public"], function(headf, public){
 			if(thumb_top - container_top > 0 && ind_off == 296){
 				let top = $('.thumb-container').css('top');
 				top = parseInt(top);
-				$('.thumb-container').animate({top: (top + 111)});
+				$('.thumb-container').stop().animate({top: (top + 111)});
 			}
 		});
 		$('.arrow-down').click(function(event) {
@@ -63,7 +157,7 @@ define(["headf", "public"], function(headf, public){
 			if(thumb_top - container_top < 222 && ind_off == 407){
 				let top = $('.thumb-container').css('top');
 				top = parseInt(top);
-				$('.thumb-container').animate({top:(top - 111)});
+				$('.thumb-container').stop().animate({top:(top - 111)});
 			}
 		});
 
@@ -109,7 +203,6 @@ define(["headf", "public"], function(headf, public){
 		//点击+ —
 		$('.minus-btn-active').click(function(){
 			let num = $('.count-input').attr('value');
-
 			if(num > 1){
 				$('.count-input').attr('value', num - 1);
 				if(num == 2){
@@ -141,7 +234,7 @@ define(["headf", "public"], function(headf, public){
 		//点击切换详细信息
 		$('.nav-title li').click(function(event) {
 			let num = $(this).index();
-			$('.nav-arr').animate({left:(128 * num)}, .2);
+			$('.nav-arr').stop().animate({left:(128 * num)}, .2);
 			$('.main-body').find('.no').css('display', 'none');
 			$('.main-body').find('.no').eq(num).css('display', 'block');
 		});

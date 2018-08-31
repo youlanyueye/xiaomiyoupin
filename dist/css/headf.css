@@ -120,6 +120,7 @@ i.bgicon {
   z-index: 20; }
 
 #head h1 {
+  cursor: pointer;
   float: left;
   width: 123px;
   height: 51px;
@@ -139,7 +140,7 @@ i.bgicon {
   padding: 0 5px;
   display: none; }
 
-#head .nav_part_box .nav_part span {
+#head .nav_part_box .nav_part span.box {
   font: 14px/24px "微软雅黑";
   color: #333; }
 
@@ -230,16 +231,61 @@ i.bgicon {
   color: #ccc; }
 
 #head .shopping_cart {
+  position: relative;
   float: right;
   margin-right: 6px;
   margin-top: 18px;
-  margin-left: 20px; }
+  margin-left: 20px;
+  position: relative; }
 
 #head .shopping_cart a {
   display: block;
   width: 30px;
   height: 30px;
   background: url(../images/icons.png) no-repeat 0 -948px; }
+
+#head .shopping_cart .cart-news {
+  position: absolute;
+  right: -6px;
+  top: -3px;
+  width: 21px;
+  border-radius: 8px;
+  line-height: 17px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  background-color: #c00000; }
+
+#head .shopping_cart .shop_lish {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 270px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 5px; }
+  #head .shopping_cart .shop_lish ul li {
+    border-bottom: 1px dashed #e7e7e7; }
+    #head .shopping_cart .shop_lish ul li .sc_goodsPic {
+      width: 80px;
+      height: 80px;
+      float: left; }
+    #head .shopping_cart .shop_lish ul li .sc_goodsPic img {
+      width: 100%;
+      height: 100%; }
+    #head .shopping_cart .shop_lish ul li .sc_goodsTitle {
+      line-height: 40px;
+      color: #999;
+      margin-left: 15px;
+      float: left; }
+    #head .shopping_cart .shop_lish ul li .sc_goodsNum {
+      float: left;
+      line-height: 30px;
+      margin-left: 15px; }
+  #head .shopping_cart .shop_lish ul li:last-child {
+    border-bottom: none; }
 
 #fixedBar {
   position: fixed;
