@@ -97,9 +97,8 @@ define(["jquery", "jquery-cookie"], function($){
 		        sut = false;
 		    }else{
 		    	if(sut){
-		    		
 					$.ajax({
-						url: 'http://localhost/mi/redact/login.php',
+						url: 'http://localhost/mi/dist/login.php',
 						type: 'POST',
 						data: {phone_num: $('#phone_num').val()},
 					})
@@ -179,7 +178,7 @@ define(["jquery", "jquery-cookie"], function($){
 		$('#submit-a').click(function(event) {
 			if(pass){
 				$.ajax({
-						url: 'http://localhost/mi/redact/login2.php',
+						url: 'http://localhost/mi/dist/login2.php',
 						type: 'POST',
 						data: {phone_num: $('#phone_num').val(),
 							   password:$('#password').val()

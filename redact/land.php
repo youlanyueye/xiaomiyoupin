@@ -1,4 +1,5 @@
 <?php 
+ 	header('Access-Control-Allow-Origin: *');
 	// php链接数据库，总结为天龙八部
 	// 设置编码方式
 	header("Content-type:text/html;charset=utf-8");

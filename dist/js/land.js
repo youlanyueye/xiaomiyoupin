@@ -72,7 +72,7 @@ define(["jquery", "jquery-cookie"], function($){
 
 			if(judge){
 				$.ajax({
-					url: 'http://localhost/mi/redact/land.php',
+					url: 'http://localhost/mi/dist/land.php',
 					type: 'POST',
 					data: {user: $('#username').val(),
 						   password: $('#pwd').val()},

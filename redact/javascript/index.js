@@ -144,9 +144,9 @@ define(["headf","public"], function(headf, public){
 								<div class="randomBg-top clear">
 									<div class="spacial-guide" style="background-color: ${arr[i].background_color};">
 										<h2 class="top-tit">${arr[i].classify_name}</h2>
-										<span class="pro-more tag-a" data-target="_blank" data-src = "http://localhost:8888/${arr[i].classify_id}.html">更多 &gt;</span>
+										<span class="pro-more tag-a" data-target="_blank" data-src = "${arr[i].classify_id}.html">更多 &gt;</span>
 									</div>
-									<div class="randomBg-img tag-a" data-src="http://localhost:8888/${arr[i].banner_id}.html">
+									<div class="randomBg-img tag-a" data-src="product.html?gid=${arr[i].banner_id}">
 										<img class="" src="${arr[i].banner_src}">
 									</div>
 								</div>
@@ -156,7 +156,7 @@ define(["headf","public"], function(headf, public){
 						</div>`).insertBefore($('#fixedBar'));
 						var pro = arr[i].product;
 						for(var j = 0; j < pro.length; j++){
-							$(`<div class="pro-item-box"><div class="pro-item tag-a" data-src="http://localhost:8888/${pro[j].pro_id}.html">
+							$(`<div class="pro-item-box"><div class="pro-item tag-a" data-src="product.html?gid=${pro[j].pro_id}">
 									<div class="pro-img valign">
 										<img src="${pro[j].pro_src}">
 									</div>
